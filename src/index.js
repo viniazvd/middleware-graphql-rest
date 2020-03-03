@@ -16,12 +16,6 @@ fastify.register(gql, {
 // Import Routes
 const routes = require('./routes')
 
-// Import Swagger Options
-const swagger = require('./config/swagger')
-
-// Register Swagger
-fastify.register(require('fastify-swagger'), swagger.options)
-
 // Loop over each route
 routes.forEach((route, index) => {
 	fastify.route(route)

@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 
 // Connect to DB
 mongoose
-	.connect('mongodb://database/mongoql')
+	.connect('mongodb://root:root@database:27017/admin')
 	.then(() => console.log('MongoDB connected...'))
 	.catch(err => console.log(err))
 

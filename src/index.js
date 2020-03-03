@@ -1,3 +1,6 @@
+// start dotenv
+require('dotenv').config()
+
 // Import Server
 const fastify = require('./server.js')
 
@@ -25,7 +28,6 @@ routes.forEach((route, index) => {
 const start = async () => {
 	try {
 		await fastify.listen(3000, '0.0.0.0')
-		fastify.swagger()
 		fastify.log.info(`server listening on ${fastify.server.address().port}`)
 	} catch (err) {
 		fastify.log.error(err)

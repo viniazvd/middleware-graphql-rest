@@ -3,7 +3,7 @@ const faker = require('faker')
 const boom = require('boom')
 
 // Import internal dependancies
-const fastify = require('../server.js')
+import fastify from '../server.js'
 
 // Fake data
 const cars = [

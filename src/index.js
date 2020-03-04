@@ -1,14 +1,14 @@
 // start dotenv
-require('dotenv').config()
+import 'dotenv/config'
 
 // Import Server
-const fastify = require('./server.js')
+import fastify from './server.js'
 
 // Import external dependancies
-const gql = require('fastify-gql')
+import gql from 'fastify-gql'
 
 // Import GraphQL Schema
-const schema = require('./schema')
+import schema from './schema'
 
 // Register Fastify GraphQL
 fastify.register(gql, {
@@ -17,7 +17,7 @@ fastify.register(gql, {
 })
 
 // Import Routes
-const routes = require('./routes')
+import routes from './routes'
 
 // Loop over each route
 routes.forEach((route, index) => {

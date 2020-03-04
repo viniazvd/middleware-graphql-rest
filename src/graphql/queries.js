@@ -8,7 +8,7 @@ import UserType from './types'
 const { GraphQLObjectType, GraphQLID, GraphQLList, } = graphql
 
 // Import Controllers
-import userService from '../services/user'
+import { getUsers, getSingleUser } from '../services/user'
 
 // Define Query
 const Query = new GraphQLObjectType({
@@ -19,14 +19,14 @@ const Query = new GraphQLObjectType({
 			type: UserType,
 			args: { id: { type: GraphQLID } },
 			async resolve (_, args) {
-				return await userService.getSingleUser(args)
+				return await getSingleUser(args)
 			}
     },
 
 		users: {
 			type: new GraphQLList(UserType),
 			async resolve () {
-				return await userService.getUsers()
+				return await getUsers()
 			}
 		}
 	}

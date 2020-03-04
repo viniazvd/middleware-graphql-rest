@@ -19,5 +19,3 @@ export const getSingleUser = (req) => {
 		throw boom.boomify(err)
 	}
 }
-
-export default { getUsers, getSingleUser }

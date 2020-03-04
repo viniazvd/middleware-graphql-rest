@@ -17,5 +17,5 @@ mongoose
 	.then(() => console.log('MongoDB connected...'))
 	.catch(err => console.log(err))
 
-module.exports = fastify
+export default fastify
 

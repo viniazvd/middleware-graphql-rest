@@ -1,10 +1,10 @@
 // Import External Dependancies
-const graphql = require('graphql')
-const query = require('./queries')
-const mutation = require('./mutations')
+import graphql from 'graphql'
+import query from './queries'
+import mutation from './mutations'
 
 // Destructure GraphQL functions
 const { GraphQLSchema } = graphql
 
 // Export the schema
-module.exports = new GraphQLSchema({ query, mutation })
+export default new GraphQLSchema({ query, mutation })

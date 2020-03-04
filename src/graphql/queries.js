@@ -1,14 +1,14 @@
 // Import External Dependancies
-const graphql = require('graphql')
+import graphql from 'graphql'
 
 // Import User Type
-const UserType = require('./types')
+import UserType from './types'
 
 // Destructure GraphQL functions
 const { GraphQLObjectType, GraphQLID, GraphQLList, } = graphql
 
 // Import Controllers
-const userService = require('../services/user')
+import userService from '../services/user'
 
 // Define Query
 const Query = new GraphQLObjectType({
@@ -32,4 +32,4 @@ const Query = new GraphQLObjectType({
 	}
 })
 
-module.exports = Query
+export default Query

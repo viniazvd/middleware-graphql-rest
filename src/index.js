@@ -2,16 +2,17 @@
 import 'dotenv/config'
 
 // Start MongoDB
-require('./services/db')
+import './services/db'
 
 // Require the fastify framework and instantiate it
-const fastify = require('fastify')({ logger: true })
+import fst from 'fastify'
+const fastify = fst({ logger: true })
 
 // Import external dependancies
 import gql from 'fastify-gql'
 
 // Import GraphQL Schema
-const schema = require('./graphql')
+import schema from './graphql'
 
 // Register Fastify GraphQL
 fastify.register(gql, { schema, graphiql: true })
@@ -35,3 +36,5 @@ const start = async () => {
 }
 
 start()
+
+export default fastify

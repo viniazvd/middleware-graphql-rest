@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "seed": "node src/helpers/seed.js"
+    "seed": "babel-node src/helpers/seed.js"
   },
   "license": "ISC",
   "dependencies": {

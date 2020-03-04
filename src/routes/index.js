@@ -1,16 +1,16 @@
-const userService = require('../services/user')
+import { getUsers, getSingleUser } from '../services/user'
 
 const routes = [
   {
     method: 'GET',
     url: '/api/users',
-    handler: userService.getUsers
+    handler: getUsers
   },
   {
     method: 'GET',
     url: '/api/users/:id',
-    handler: userService.getSingleUser
+    handler: getSingleUser
   }
 ]
 
-module.exports = routes
+export default routes

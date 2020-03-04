@@ -1,7 +1,7 @@
-const User = require('../models/User')
+import User from '../models/User'
 
 // Get all users
-exports.getUsers = () => {
+export const getUsers = () => {
 	try {
 	  return User.find()
 	} catch (err) {
@@ -10,7 +10,7 @@ exports.getUsers = () => {
 }
 
 // Get single user by ID
-exports.getSingleUser = (req) => {
+export const getSingleUser = (req) => {
 	try {
     const id = !req.params ? req.id : req.params.id
 
@@ -19,3 +19,5 @@ exports.getSingleUser = (req) => {
 		throw boom.boomify(err)
 	}
 }
+
+export default { getUsers, getSingleUser }

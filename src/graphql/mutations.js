@@ -1,8 +1,8 @@
 // Import External Dependancies
-const graphql = require('graphql')
+import graphql from 'graphql'
 
 // Import User Type
-const UserType = require('./types')
+import UserType from './types'
 
 // Destructure GraphQL functions
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLNonNull } = graphql
@@ -44,4 +44,4 @@ const Mutations = new GraphQLObjectType({
 	}
 })
 
-module.exports = Mutations
+export default Mutations

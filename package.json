@@ -2,15 +2,14 @@
   "name": "middleware-graphql-rest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
-    "seed": "babel-node src/seed.js"
+    "start": "nodemon --es-module-specifier-resolution=node src/index.js",
+    "seed": "node --es-module-specifier-resolution=node src/helpers/seed.js"
   },
+  "type": "module",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.8.6",
-    "@babel/preset-env": "^7.8.6",
     "boom": "^7.3.0",
     "dotenv": "^8.2.0",
     "fastify": "^2.3.0",
@@ -20,7 +19,6 @@
     "mongoose": "^5.5.8"
   },
   "devDependencies": {
-    "@babel/node": "^7.8.4",
     "faker": "^4.1.0",
     "nodemon": "^1.19.0"
   }

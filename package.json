@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/nodemon/bin/nodemon.js ./src/index.js",
-    "seed": "node ./src/helpers/seed.js"
+    "seed": "node ./src/seed.js"
   },
   "license": "ISC",
   "dependencies": {

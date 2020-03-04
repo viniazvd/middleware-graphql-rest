@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "yarn && nodemon --es-module-specifier-resolution=node src/index.js",
+    "start": "nodemon --es-module-specifier-resolution=node src/index.js",
     "seed": "node --es-module-specifier-resolution=node src/seed.js"
   },
   "license": "ISC",

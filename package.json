@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "nodemon --es-module-specifier-resolution=node src/index.js",
-    "seed": "node --es-module-specifier-resolution=node src/helpers/seed.js"
+    "seed": "node --es-module-specifier-resolution=node src/seed.js"
   },
   "license": "ISC",
   "dependencies": {

@@ -1,5 +1,5 @@
 // start dotenv
-import 'dotenv/config.js'
+import 'dotenv/config'
 
 // Start MongoDB
 import './services/db'
@@ -36,3 +36,5 @@ const start = async () => {
 }
 
 start()
+
+export default fastify

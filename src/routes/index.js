@@ -1,31 +1,15 @@
-// Import our Controllers
-const carController = require('../controllers/carController')
+const userService = require('../services/user')
 
 const routes = [
   {
     method: 'GET',
-    url: '/api/cars',
-    handler: carController.getCars
+    url: '/api/users',
+    handler: userService.getUsers
   },
   {
     method: 'GET',
-    url: '/api/cars/:id',
-    handler: carController.getSingleCar
-  },
-  {
-    method: 'POST',
-    url: '/api/cars',
-    handler: carController.addCar,
-  },
-  {
-    method: 'PUT',
-    url: '/api/cars/:id',
-    handler: carController.updateCar
-  },
-  {
-    method: 'DELETE',
-    url: '/api/cars/:id',
-    handler: carController.deleteCar
+    url: '/api/users/:id',
+    handler: userService.getSingleUser
   }
 ]
 

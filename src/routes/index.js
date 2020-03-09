@@ -8,7 +8,7 @@ const routes = [
   },
   {
     method: 'GET',
-    url: '/api/users/:id',
+    url: '/api/user/:id',
     handler: getSingleUser
   },
   {

@@ -1,78 +1,35 @@
+// start dotenv
+import 'dotenv/config'
+
+// Start MongoDB
+import './services/db'
+
+import fastify from './'
+
 // Import external dependancies
 import faker from 'faker'
 import boom from 'boom'
 
-// Import internal dependancies
-import fastify from './'
-
-// Fake data
-const cars = [
-	{
-		name: 'Tesla',
-		models: ['S', 'E', 'X', 'Y']
-	},
-	{
-		name: 'Mercedes',
-		models: ['GLA', 'GLC', 'GLE', 'GLS']
-	},
-	{
-		name: 'BMW',
-		models: ['X4', 'Z3', 'M2', '7']
-	},
-	{
-		name: 'Audi',
-		models: ['A1', 'A3', 'A4', 'A5']
-	},
-	{
-		name: 'Ford',
-		models: ['Fiesta', 'Focus', 'Fusion', 'Mustang']
-	}
-]
-
 // Get Data Models
-// import Car from './models/Car'
+import User from './models/User'
 
-// const generateCarData = ownersIds => {
-// 	let carData = []
-// 	let i = 0
+const generateUserData = () => {
+  return Array.from({ length: 15 }, () => {
+    return {
+      name: faker.name.findName(),
+      email: faker.internet.email()
+    }
+  })
+}
 
-// 	while (i < 1000) {
-// 		const owner_id = faker.random.arrayElement(ownersIds)
-// 		const carObject = faker.random.arrayElement(cars)
-// 		const title = faker.random.arrayElement(carObject.models)
-// 		const price = faker.random.number({ min: 5000, max: 30000 })
-// 		const age = faker.random.number({ min: 2, max: 10 })
+async function generateUsers () {
+  try {
+    const users = await User.insertMany(generateUserData())
 
-// 		const car = {
-// 			owner_id,
-// 			brand: carObject.name,
-// 			title,
-// 			price,
-// 			age
-// 		}
+    console.log(`Data successfully added: ${users.length} users added.`)
+  } catch (err) {
+    throw boom.boomify(err)
+  }
+}
 
-// 		carData.push(car)
-// 		i++
-// 	}
-
-// 	return carData
-// }
-
-// fastify.ready().then(
-// 	async () => {
-// 		try {
-// 			const cars = await Car.insertMany(generateCarData(ownersIds))
-
-// 			console.log(`Data successfully added:
-//         - ${cars.length} cars added.
-//       `)
-// 		} catch (err) {
-// 			throw boom.boomify(err)
-// 		}
-// 		process.exit()
-// 	},
-// 	err => {
-// 		console.log('An error occured: ', err)
-// 		process.exit()
-// 	}
-// )
+fastify.ready().then(generateUsers)

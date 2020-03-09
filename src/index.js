@@ -6,6 +6,10 @@ import './services/db'
 
 // Require the fastify framework and instantiate it
 import fst from 'fastify'
+
+// Import CORS
+import cors from 'fastify-cors'
+
 const fastify = fst({ logger: true })
 
 // Import external dependancies
@@ -16,6 +20,9 @@ import schema from './graphql'
 
 // Register Fastify GraphQL
 fastify.register(gql, { schema, graphiql: true })
+
+// Register Fastify CORS
+fastify.register(cors)
 
 // Import Routes
 import routes from './routes'

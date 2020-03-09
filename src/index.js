@@ -30,8 +30,8 @@ import routes from './routes'
 // Loop over each route
 routes.forEach(route => { fastify.route(route) })
 
-// Run the server!
-const start = async () => {
+// Start the server!
+export const init = async () => {
 	try {
     await fastify.listen(3000, '0.0.0.0')
 
@@ -42,6 +42,5 @@ const start = async () => {
 	}
 }
 
-start()
-
 export default fastify
+

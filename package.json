@@ -5,8 +5,9 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --es-module-specifier-resolution=node src/index.js",
-    "seed": "node --es-module-specifier-resolution=node src/seed.js"
+    "seed": "docker-compose exec app yarn seed:init",
+    "seed:init": "node --es-module-specifier-resolution=node src/seed.js",
+    "start": "nodemon --es-module-specifier-resolution=node src/init.js"
   },
   "license": "ISC",
   "dependencies": {

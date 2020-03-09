@@ -23,8 +23,11 @@ export const getSingleUser = req => {
 // Add a new user
 export const addUser = req => {
 	try {
-		return req
+    console.log({ addUser: req })
+
+		return { data: req }
 	} catch (err) {
+    console.log({ error: 'addUser' })
 		throw boom.boomify(err)
 	}
 }
@@ -32,7 +35,9 @@ export const addUser = req => {
 // Update an existing user
 export const updateUser = req => {
 	try {
-		return req
+    console.log({ updateUser: req })
+
+		return { data: req }
 	} catch (err) {
 		throw boom.boomify(err)
 	}
@@ -41,6 +46,8 @@ export const updateUser = req => {
 // Delete a user
 export const deleteUser = req => {
 	try {
+    console.log({ deleteUser: req })
+
 		return req
 	} catch (err) {
 		throw boom.boomify(err)

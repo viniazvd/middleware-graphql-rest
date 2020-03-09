@@ -12,7 +12,7 @@ export const getUsers = () => {
 // Get single user by ID
 export const getSingleUser = req => {
 	try {
-    const id = req.id || req.params.id
+    const id = req.params.id
 
 		return User.findById(id)
 	} catch (err) {
